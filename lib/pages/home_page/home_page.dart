@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
-import 'package:portfolio/constants/nav_items.dart';
+import 'package:portfolio/styles/style.dart';
+import 'package:portfolio/widgets/header_desktop.dart';
+import 'package:portfolio/widgets/header_mobile.dart';
+import 'package:portfolio/widgets/site_logo.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,52 +21,12 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.vertical,
           children: [
             // MAIN
-            Container(
-              height: 60,
-              width: double.infinity,
-              margin:
-                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-              decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [
-                      Colors.transparent,
-                      CustomColors.bgLight1,
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(100.0)),
-              child: Row(
-                children: [
-                  // LOGO
-                  const Text(
-                    "SM",
-                    style: TextStyle(
-                      fontSize: 22.0,
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline,
-                      fontStyle: FontStyle.italic,
-                      color: CustomColors.yellowSecondary,
-                      letterSpacing: 5,
-                    ),
-                  ),
-                  const Spacer(),
-                  for (int i = 0; i < navTitles.length; i++)
-                    Padding(
-                      padding: const EdgeInsets.only(right: 20.0),
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          navTitles[i],
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                            color: CustomColors.whitePrimary,
-                          ),
-                        ),
-                      ),
-                    ),
-                ],
-              ),
+            // const HeaderDesktop(),
+            HeaderMobile(
+              onLogoTap: () {},
+              onMenuTap: () {},
             ),
+
             // SKILLS
             Container(
               height: 500,
